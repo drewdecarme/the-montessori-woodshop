@@ -6,13 +6,14 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "babel src -d dist --extensions \".ts,.js\"",
+    "build": "yarn run babel src -d dist --extensions \".ts,.js\"",
     "dev": "yarn run medusa develop",
     "start": "yarn run medusa start",
     "migrate": "yarn run medusa migrations run --verbose"
   },
   "dependencies": {
     "@medusajs/medusa": "^1.1.57",
+    "@medusajs/medusa-cli": "^1.1.23",
     "dotenv": "^10.0.0",
     "medusa-fulfillment-manual": "^1.1.26",
     "medusa-interfaces": "^1.1.27",
