@@ -8,7 +8,6 @@ services:
       - postgres
     ports:
       - "9000:9000"
-    command: bash -c "yarn migrate && yarn start"
     volumes:
       - .:/backend/db
       - /backend/medusa/node_modules
