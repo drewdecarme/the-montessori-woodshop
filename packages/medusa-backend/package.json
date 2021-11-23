@@ -6,10 +6,12 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "yarn run babel src -d dist --extensions \".ts,.js\"",
-    "dev": "yarn run medusa develop",
-    "start": "yarn run medusa start",
-    "migrate": "yarn run medusa migrations run --verbose"
+    "build": "yarn babel src -d dist --extensions \".ts,.js\"",
+    "dev": "yarn medusa develop",
+    "start": "yarn medusa start",
+    "migrate": "yarn medusa migrations run",
+    "serve": "yarn medusa migrations run && yarn medusa start",
+    "version": "yarn medusa version"
   },
   "dependencies": {
     "@medusajs/medusa": "^1.1.57",
@@ -20,6 +22,7 @@
     "medusa-payment-manual": "^1.0.8",
     "medusa-payment-stripe": "^1.1.30",
     "mongoose": "^5.13.3",
+    "pg": "^8.7.1",
     "typeorm": "^0.2.36"
   },
   "repository": "https://github.com/medusajs/medusa-starter-default.git",

@@ -6376,6 +6376,7 @@ __metadata:
     medusa-payment-manual: ^1.0.8
     medusa-payment-stripe: ^1.1.30
     mongoose: ^5.13.3
+    pg: ^8.7.1
     prettier: ^2.4.1
     typeorm: ^0.2.36
   languageName: unknown
@@ -6427,6 +6428,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@woodshop/the-montessori-woodshop@workspace:."
   dependencies:
+    "@medusajs/medusa": ^1.1.57
     eslint: ^8.3.0
     prettier: ^2.4.1
     typescript: ^4.5.2
@@ -23237,7 +23239,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pg@npm:*, pg@npm:^8.3.0, pg@npm:^8.5.1":
+"pg@npm:*, pg@npm:^8.3.0, pg@npm:^8.5.1, pg@npm:^8.7.1":
   version: 8.7.1
   resolution: "pg@npm:8.7.1"
   dependencies:
