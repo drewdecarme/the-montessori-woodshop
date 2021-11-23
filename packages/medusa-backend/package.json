@@ -5,16 +5,11 @@
   "author": "Drew DeCarme (drew@themontessoriwoodshop.com)",
   "license": "MIT",
   "private": true,
-  "workspaces": {
-    "nohoist": [
-      "**"
-    ]
-  },
   "scripts": {
     "build": "babel src -d dist --extensions \".ts,.js\"",
-    "dev": "medusa develop",
-    "start": "medusa start",
-    "migrate": "medusa migrations run --verbose"
+    "dev": "yarn run medusa develop",
+    "start": "yarn run medusa start",
+    "migrate": "yarn run medusa migrations run --verbose"
   },
   "dependencies": {
     "@medusajs/medusa": "^1.1.57",
