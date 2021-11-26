@@ -16,7 +16,7 @@ COPY .yarnrc.yml /app/admin/.yarnrc.yml
 COPY yarn.lock /app/admin/yarn.lock
 COPY .yarn /app/admin/.yarn
 
-RUN yarn rebuild
+RUN yarn install
 
 # Build the app
 RUN yarn workspace @woodshop/admin build

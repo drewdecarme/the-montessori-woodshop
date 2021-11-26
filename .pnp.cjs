@@ -6926,6 +6926,29 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "SOFT",
         }],
+        ["virtual:513f17c13dde03a51788036e8c9198bbd6a9ca090398ea5bbbb3da0ce90d05718f558e82ae1e5eac33918c05dc49f1f069b02eb28fd93c64d46cdb63d199ac08#npm:1.0.6", {
+          "packageLocation": "./.yarn/__virtual__/@remix-run-server-runtime-virtual-381533aa66/0/cache/@remix-run-server-runtime-npm-1.0.6-6145504fe4-83bd0f9f7a.zip/node_modules/@remix-run/server-runtime/",
+          "packageDependencies": [
+            ["@remix-run/server-runtime", "virtual:513f17c13dde03a51788036e8c9198bbd6a9ca090398ea5bbbb3da0ce90d05718f558e82ae1e5eac33918c05dc49f1f069b02eb28fd93c64d46cdb63d199ac08#npm:1.0.6"],
+            ["@types/cookie", "npm:0.4.1"],
+            ["@types/react", "npm:17.0.37"],
+            ["@types/react-dom", "npm:17.0.11"],
+            ["cookie", "npm:0.4.1"],
+            ["jsesc", "npm:3.0.2"],
+            ["react", "npm:17.0.2"],
+            ["react-dom", "virtual:513f17c13dde03a51788036e8c9198bbd6a9ca090398ea5bbbb3da0ce90d05718f558e82ae1e5eac33918c05dc49f1f069b02eb28fd93c64d46cdb63d199ac08#npm:17.0.2"],
+            ["react-router-dom", "virtual:83d18cd38b0a9f1cfdf7285cb92a680ab8088edaa863caca8a2fb6c3b256bed1672f6686d8c4d118d7ad4bb510296bbb25fa602113d4baace02223ac43a67f40#npm:6.0.2"],
+            ["set-cookie-parser", "npm:2.4.8"],
+            ["source-map", "npm:0.7.3"]
+          ],
+          "packagePeers": [
+            "@types/react-dom",
+            "@types/react",
+            "react-dom",
+            "react"
+          ],
+          "linkType": "HARD",
+        }],
         ["virtual:e9c2384b6c20fb5120cf51e64eff4933fe91593644df12ad00d302c71a090c47fe1af21611795b7ad3b99fb30e34303cfcf85802808b2f5c9607ad2187cf0a1d#npm:1.0.6", {
           "packageLocation": "./.yarn/__virtual__/@remix-run-server-runtime-virtual-80c86bbd7d/0/cache/@remix-run-server-runtime-npm-1.0.6-6145504fe4-83bd0f9f7a.zip/node_modules/@remix-run/server-runtime/",
           "packageDependencies": [
@@ -8531,6 +8554,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@remix-run/cloudflare-workers", "virtual:513f17c13dde03a51788036e8c9198bbd6a9ca090398ea5bbbb3da0ce90d05718f558e82ae1e5eac33918c05dc49f1f069b02eb28fd93c64d46cdb63d199ac08#npm:1.0.6"],
             ["@remix-run/dev", "npm:1.0.6"],
             ["@remix-run/react", "virtual:513f17c13dde03a51788036e8c9198bbd6a9ca090398ea5bbbb3da0ce90d05718f558e82ae1e5eac33918c05dc49f1f069b02eb28fd93c64d46cdb63d199ac08#npm:1.0.6"],
+            ["@remix-run/server-runtime", "virtual:513f17c13dde03a51788036e8c9198bbd6a9ca090398ea5bbbb3da0ce90d05718f558e82ae1e5eac33918c05dc49f1f069b02eb28fd93c64d46cdb63d199ac08#npm:1.0.6"],
             ["@types/react", "npm:17.0.37"],
             ["@types/react-dom", "npm:17.0.11"],
             ["esbuild", "npm:0.13.14"],

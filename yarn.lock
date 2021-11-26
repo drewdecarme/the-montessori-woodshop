@@ -4444,7 +4444,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@remix-run/dev@npm:^1.0.6":
+"@remix-run/dev@npm:latest":
   version: 1.0.6
   resolution: "@remix-run/dev@npm:1.0.6"
   dependencies:
@@ -4479,7 +4479,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@remix-run/server-runtime@npm:1.0.6":
+"@remix-run/server-runtime@npm:1.0.6, @remix-run/server-runtime@npm:^1.0.6":
   version: 1.0.6
   resolution: "@remix-run/server-runtime@npm:1.0.6"
   dependencies:
@@ -5808,8 +5808,9 @@ __metadata:
   dependencies:
     "@cloudflare/workers-types": ^2.2.2
     "@remix-run/cloudflare-workers": ^1.0.6
-    "@remix-run/dev": ^1.0.6
+    "@remix-run/dev": latest
     "@remix-run/react": ^1.0.6
+    "@remix-run/server-runtime": ^1.0.6
     "@types/react": ^17.0.24
     "@types/react-dom": ^17.0.9
     esbuild: 0.13.14
