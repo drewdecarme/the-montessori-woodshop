@@ -17,7 +17,6 @@ COPY yarn.lock /app/admin/yarn.lock
 COPY .yarn /app/admin/.yarn
 
 RUN yarn rebuild
-# RUN npm install --only production --no-package-lock
 
 # Build the app
 RUN yarn workspace @woodshop/admin build
