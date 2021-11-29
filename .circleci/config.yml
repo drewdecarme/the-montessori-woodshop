@@ -23,7 +23,7 @@ jobs:
           root: .
           paths:
             - ./admin/image.tar
-  buildMedusa:
+  buildBackend:
     executor: docker-publisher
     steps:
       - checkout
@@ -65,14 +65,18 @@ workflows:
   version: 2
   build-main:
     jobs:
-      - build:
+      - build-admin:
+          filters:
+            branches:
+              only: main
+      - build-backend:
           filters:
             branches:
               only: main
       - publish-latest:
           requires:
             - buildAdmin
-            - buildMedusa
+            - buildBackend
           filters:
             branches:
               only: main
