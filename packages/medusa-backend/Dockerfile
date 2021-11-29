@@ -8,8 +8,6 @@ COPY packages/medusa-backend/entrypoint.sh /app/medusa/entrypoint.sh
 
 RUN yarn set version berry
 
-COPY .pnp.cjs /app/medusa/.pnp.cjs
-COPY .pnp.loader.mjs /app/medusa/.pnp.loader.mjs
 COPY .yarnrc.yml /app/medusa/.yarnrc.yml
 COPY yarn.lock /app/medusa/yarn.lock
 COPY .yarn /app/medusa/.yarn
