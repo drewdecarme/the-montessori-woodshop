@@ -5,7 +5,7 @@ services:
     env: static
     branch: main
     buildCommand: yarn admin:build
-    staticPUblishPath: packages/medusa-admin/public
+    staticPublishPath: packages/medusa-admin/public
     routes:
       - type: rewrite
         source: "/a/*"
@@ -27,7 +27,11 @@ services:
     name: medusa
     env: node
     branch: main
-    scaling: autoScaling
+    scaling:
+      minInstances: 1
+      maxInstances: 3
+      targetMemoryPercent: 60
+      targetCPUPercent: 60
     buildCommand: yarn backend:build
     startCommand: yarn backend:migrate && yarn backend:start
     envVars:
