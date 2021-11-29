@@ -1,0 +1,78 @@
+version: 2.1
+executors:
+  docker-publisher:
+    environment:
+      IMAGE_NAME_ADMIN: drewdecarme/woodshop-admin
+      IMAGE_NAME_BACKEND: drewdecarme/woodshop-backend
+    docker:
+      - image: circleci/buildpack-deps:stretch
+jobs:
+  buildAdmin:
+    executor: docker-publisher
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Build Docker image - Admin
+          command: |
+            docker-compose build admin -t $IMAGE_NAME_ADMIN:latest .
+      - run:
+          name: Archive Docker image
+          command: docker save -o image.tar $IMAGE_NAME_ADMIN
+      - persist_to_workspace:
+          root: .
+          paths:
+            - ./admin/image.tar
+  buildMedusa:
+    executor: docker-publisher
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Build Docker image - Backend
+          command: |
+            docker-compose build backend -t $IMAGE_NAME_BACKEND:latest .
+      - run:
+          name: Archive Docker image
+          command: docker save -o image.tar $IMAGE_NAME_BACKEND
+      - persist_to_workspace:
+          root: .
+          paths:
+            - ./backend/image.tar
+  publish-latest:
+    executor: docker-publisher
+    steps:
+      - attach_workspace:
+          at: /tmp/workspace
+      - setup_remote_docker
+      - run:
+          name: Load archived Docker image - Admin
+          command: docker load -i /tmp/workspace/admin/image.tar
+      - run:
+          name: Publish Docker Image to Docker Hub - Admin
+          command: |
+            echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+            docker push $IMAGE_NAME:latest
+      - run:
+          name: Load archived Docker image - Backend
+          command: docker load -i /tmp/workspace/backend/image.tar
+      - run:
+          name: Publish Docker Image to Docker Hub - Backend
+          command: |
+            echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+            docker push $IMAGE_NAME:latest
+workflows:
+  version: 2
+  build-main:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: main
+      - publish-latest:
+          requires:
+            - buildAdmin
+            - buildMedusa
+          filters:
+            branches:
+              only: main
