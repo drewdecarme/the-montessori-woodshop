@@ -4,7 +4,7 @@ services:
     name: admin
     env: static
     branch: main
-    buildCommand: yarn admin:build
+    buildCommand: yarn install --immutable && yarn admin:build
     staticPublishPath: packages/medusa-admin/public
     routes:
       - type: rewrite
