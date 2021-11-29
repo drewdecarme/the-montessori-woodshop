@@ -17,6 +17,8 @@ services:
   - type: pserv
     name: redis
     env: docker
+    dockerfilePath: ./redis/Dockerfile
+    dockerContext: ./redis/
     disk:
       name: data
       mountPath: /var/lib/redis
