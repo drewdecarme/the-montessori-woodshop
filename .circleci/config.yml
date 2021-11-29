@@ -7,7 +7,7 @@ executors:
     docker:
       - image: circleci/buildpack-deps:stretch
 jobs:
-  buildAdmin:
+  build-admin:
     executor: docker-publisher
     steps:
       - checkout
@@ -23,7 +23,7 @@ jobs:
           root: .
           paths:
             - ./admin/image.tar
-  buildBackend:
+  build-backend:
     executor: docker-publisher
     steps:
       - checkout
@@ -75,8 +75,8 @@ workflows:
               only: main
       - publish-latest:
           requires:
-            - buildAdmin
-            - buildBackend
+            - build-admin
+            - build-backend
           filters:
             branches:
               only: main
