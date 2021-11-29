@@ -1,4 +1,7 @@
 [submodule "packages/medusa-admin"]
 	path = packages/medusa-admin
-	url = git@github.com:medusajs/admin.git
+	url = git@github.com:drewdecarme/admin.git
 	branch = woodshop
+[submodule "medusa-admin"]
+	path = medusa-admin
+	url = git@github.com:drewdecarme/admin.git
