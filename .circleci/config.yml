@@ -68,15 +68,15 @@ workflows:
       - build-admin:
           filters:
             branches:
-              only: main
+              only: cci
       - build-backend:
           filters:
             branches:
-              only: main
+              only: cci
       - publish-latest:
           requires:
             - build-admin
             - build-backend
           filters:
             branches:
-              only: main
+              only: cci
